@@ -1,0 +1,268 @@
+@charset "utf-8";
+/**-----重置-----**/
+html,body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; border: 0;}
+/* HTML5 display-role reset for older browsers */ 
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{ 
+display: block; 
+} 
+
+html{line-height: initial;font-size:62.5%;}
+body{-moz-user-select: none; 
+-webkit-user-select: none; 
+-ms-user-select: none; 
+-khtml-user-select: none; 
+user-select: none;}
+*,*:before,*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	word-break: break-all;
+}
+html,body { 
+	-webkit-font-smoothing: antialiased;/*字体抗锯齿渲染*/
+	color: #333;
+	font-size: 14px;
+	font-family:"Microsoft YaHei";
+}
+/*主体宽度*/
+.inner-auto{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+}
+img{
+	border:0;   
+	flex-shrink: 0; 
+	vertical-align:middle;  
+}
+ol, ul,li{ 
+    list-style: none; 
+} 
+em,address{
+	font-style: normal;
+}
+blockquote, q { 
+    quotes: none; 
+} 
+blockquote:before, blockquote:after, 
+q:before, q:after { 
+	content: ''; 
+	content: none; 
+}
+button,input{ 
+	border-radius: 0;
+	-webkit-border-radius: 0;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0
+} 
+/*
+ *	去除按钮的默认样式
+ * */
+input[type="submit"],
+input[type="button"],
+input[type="number"],
+button[type="submit"],
+button[type="button"],
+input[type="reset"],
+button[type="reset"],
+input[type="text"],
+textarea{
+	-webkit-appearance: none;
+	-moz-appearance: none; 
+	-moz-appearance: textfield;/*moz type="number"*/ 
+	-o-appearance: none;
+	appearance: none;
+	outline:none; 
+	resize:none;
+	font-family:" Microsoft YaHei","tahoma","arial","Hiragino Sans GB","\\5b8b\4f53","sans-serif","\9ED1\4F53";
+}
+input::-webkit-outer-spin-button,  /*webkit type="number"*/          
+input::-webkit-inner-spin-button{                
+	-webkit-appearance: none;        
+}
+/*
+ *	去掉谷歌输入框自动填充黄色背景
+ * */
+ input:-webkit-autofill,
+ textarea:-webkit-autofill,
+ select:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
+ }
+/*
+ *	去除文本框获取焦点时的高亮框
+ * */
+input[type="text"]:focus,button[type="text"]:focus{ 
+	outline:none;
+}
+/*占位符placeholder颜色*/
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {  color: #999 !important;} 
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {  color: #999 !important;}
+input::-moz-input-placeholder, textarea::-moz-input-placeholder {  color: #999 !important;}
+input::input-placeholder, textarea::input-placeholder {  color: #999 !important;}
+/*文字一行溢出*/
+.oneline{    /*单行溢出问题不需要给max-height -moz*/
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.twoline{  
+	overflow: hidden;
+	text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.threeline{    
+	overflow: hidden;
+	text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.fourline{    
+	overflow: hidden;
+	text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.tl{
+	text-align: left;
+}
+.tr{
+	text-align: right;
+}
+.txt-center{
+	text-align: center;
+}
+.fs0{
+	flex-shrink: 0;
+}
+/*lazyload图片 长宽百分百覆盖*/
+.pic-cover{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.pic-cover img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/*clear去浮动*/
+.clear{
+	zoom:1;
+}
+.clear:after{
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	line-height: 0;
+}
+.flex{         /*弹性布局父级元素*/
+	display: flex;
+	display: box;               /* OLD - Android 4.4- */
+	display: -webkit-box;       /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;          /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;       /* TWEENER - IE 10 */
+	display: -webkit-flex;      /* NEW - Chrome */
+} 
+ /*flex1 自动填充*/
+.flex1{
+	-webkit-box-flex: 1;       
+	-moz-box-flex: 1;           
+	-webkit-flex: 1;                    
+	-ms-flex: 1;                          
+	flex: 1;       
+}
+.flex2{
+	-webkit-box-flex: 2;       
+	-moz-box-flex: 2;           
+	-webkit-flex: 2;                    
+	-ms-flex: 2;                          
+	flex: 2; 
+}
+.flex3{
+	-webkit-box-flex: 3;       
+	-moz-box-flex: 3;           
+	-webkit-flex: 3;                    
+	-ms-flex: 3;                          
+	flex: 3; 
+}
+/*flex-wrap 自动换行*/
+.flex-wrap{
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+}
+/*flexv 竖直排列*/
+.flexv{
+	-webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+}
+/* 水平居中 */
+.flesp{
+    justify-content:center;
+    align-items:center;
+}
+/*水平垂直居中*/
+ .flexc{
+	-webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+}
+/*jus-b 水平两端对齐*/
+.jus-b{
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	-ms-flex-pack:justify;
+	justify-content:space-between;
+}
+/*jus-a 水平相等间距*/
+.jus-a{
+	-webkit-justify-content:space-around;
+	-ms-flex-pack:distribute;
+	justify-content:space-around;
+}
+/*jus-s 首端对齐*/
+.jus-s{
+	-webkit-box-pack:end;
+	-webkit-justify-content:flex-end;
+	-ms-flex-pack:end;
+	justify-content:flex-start;
+}
+/*ali-c 竖直居中*/
+.ali-c{       
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+     align-items: center;
+    -moz-box-align:center;
+}
+
+
+
+html , body , #app{
+	width:100%;height:100%;
+}
